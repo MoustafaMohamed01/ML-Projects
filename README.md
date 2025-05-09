@@ -12,10 +12,12 @@ This repository showcases a growing collection of machine learning projects buil
 ML-Projects/
 │
 ├── sonar-object-classification/           # Binary classification of sonar signals
-│   ├── data/
 │   ├── sonar_object_classification.ipynb
 │   ├── sonar_object_classification.py
-│   └── README.md
+|   ├── requirements.txt
+|   ├── README.md  
+│   └── data/
+│       └── sonar.all-data
 │
 ├── Car-Price-Prediction/                  # Linear Regression + Streamlit app for car prices
 │   ├── model_1/
