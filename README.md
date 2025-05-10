@@ -1,6 +1,6 @@
 # Machine Learning Projects
 
-Welcome to my **Machine Learning Portfolio Repository**.  
+Welcome to my **Machine Learning Portfolio Repository**.
 This repository showcases a growing collection of machine learning projects built using industry-standard tools and techniques. Each project is focused on solving real-world problems with proper data preprocessing, model selection, and performance evaluation.
 
 ---
@@ -8,14 +8,13 @@ This repository showcases a growing collection of machine learning projects buil
 ## Repository Structure
 
 ```
-
 ML-Projects/
 │
 ├── sonar-object-classification/           # Binary classification of sonar signals
 │   ├── sonar_object_classification.ipynb
 │   ├── sonar_object_classification.py
-|   ├── requirements.txt
-|   ├── README.md  
+│   ├── requirements.txt
+│   ├── README.md  
 │   └── data/
 │       └── sonar.all-data
 │
@@ -31,45 +30,73 @@ ML-Projects/
 │   ├── requirements.txt
 │   └── README.md
 │
+├── diabetes-prediction/                   # Classification using health features
+│   ├── diabetes_prediction.ipynb
+│   ├── diabetes_prediction.py
+│   ├── requirements.txt
+│   ├── README.md
+│   ├── data/
+│   │   └── diabetes.csv
+│   └── images/
+│       ├── diabetes_countplot.png
+│       ├── diabetes_heatmap.png
+│       └── diabetes_pairplot.png
+│
 └── README.md                              # Main repository documentation
-
-````
+```
 
 ---
 
 ## Completed Projects
 
 ### 🔹 [Sonar Object Classification](./sonar-object-classification/)
+
 > **Binary classification** of sonar signals to detect whether the object is a **Rock** or a **Mine** using **Logistic Regression**.
 
-- **Algorithm**: Logistic Regression
-- **Dataset**: Sonar signals with 60 frequency-based features
-- **Libraries**: `scikit-learn`, `pandas`, `numpy`
-- **Highlights**:
-  - Feature scaling with `StandardScaler`
-  - Stratified train-test split
-  - Evaluation with accuracy, classification report, and confusion matrix
+* **Algorithm**: Logistic Regression
+* **Dataset**: Sonar signals with 60 frequency-based features
+* **Libraries**: `scikit-learn`, `pandas`, `numpy`
+* **Highlights**:
+
+  * Feature scaling with `StandardScaler`
+  * Stratified train-test split
+  * Evaluation with accuracy, classification report, and confusion matrix
 
 ---
 
 ### 🔹 [Car Price Prediction](./Car-Price-Prediction/)
-> Predicts used car prices based on **model, company, year, mileage, and fuel type** using **Linear Regression**.  
+
+> Predicts used car prices based on **model, company, year, mileage, and fuel type** using **Linear Regression**.
 > Includes a deployed **Streamlit web application** for interactive use.
 
-- **Algorithm**: Linear Regression
-- **Dataset**: [Quikr Car Dataset](https://github.com/rajtilakls2510/car_price_predictor/blob/master/quikr_car.csv)
-- **Libraries**: `scikit-learn`, `pandas`, `numpy`, `streamlit`, `pickle`
-- **Highlights**:
-  - Data cleaning and preprocessing of messy real-world data
-  - Encoding categorical features and handling outliers
-  - Streamlit interface to input car details and predict prices
-  - Packaged with `requirements.txt` for easy setup
+* **Algorithm**: Linear Regression
+* **Dataset**: [Quikr Car Dataset](https://github.com/rajtilakls2510/car_price_predictor/blob/master/quikr_car.csv)
+* **Libraries**: `scikit-learn`, `pandas`, `numpy`, `streamlit`, `pickle`
+* **Highlights**:
 
-To run the Streamlit app:
-```bash
-cd Car-Price-Prediction/model_1
-streamlit run app.py
-````
+  * Data cleaning and preprocessing of messy real-world data
+  * Encoding categorical features and handling outliers
+  * Streamlit interface to input car details and predict prices
+  * Packaged with `requirements.txt` for easy setup
+
+
+---
+
+### 🔹 [Diabetes Prediction](./diabetes-prediction/)
+
+> A machine learning project to predict diabetes using the **Pima Indians Diabetes Dataset**.
+> Includes model comparison and visual analysis.
+
+* **Algorithms**: SVM, Logistic Regression, Decision Tree, Random Forest
+* **Dataset**: [Kaggle - Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
+* **Libraries**: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`
+* **Highlights**:
+
+  * Cleaned and preprocessed the dataset
+  * Dark-themed Seaborn visualizations (countplot, heatmap, pairplot)
+  * Model comparison with accuracy metrics
+  * Predicts new user input via script interface
+
 
 ---
 
