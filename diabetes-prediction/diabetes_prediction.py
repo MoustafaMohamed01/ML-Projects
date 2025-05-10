@@ -75,8 +75,7 @@ models = {
     "SVM (Linear)": svm.SVC(kernel='linear'),
     "Logistic Regression": LogisticRegression(),
     "Decision Tree": DecisionTreeClassifier(),
-    "Random Forest": RandomForestClassifier(),
-    "Gradient Boosting": GradientBoostingClassifier()
+    "Random Forest": RandomForestClassifier()
 }
 
 for name, clf in models.items():
