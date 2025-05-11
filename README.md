@@ -42,6 +42,22 @@ ML-Projects/
 │       ├── diabetes_heatmap.png
 │       └── diabetes_pairplot.png
 │
+├── creditcard-fraud-detector/
+│   ├── data/
+│   │   └── README.md     
+│   ├── model/
+│   │   └── xgboost_fraud_model.pkl  
+│   ├── plots/
+│   │   ├── correlation_heatmap.png 
+│   │   └── top10_correlated_features.png
+│   ├── credit_fraud_detection.ipynb     
+│   ├── credit_fraud_detection.py     
+│   ├── requirements.txt                
+│   └── README.md
+│
+└── README.md                         # Project documentation
+
+│
 └── README.md                              # Main repository documentation
 ```
 
@@ -79,7 +95,6 @@ ML-Projects/
   * Streamlit interface to input car details and predict prices
   * Packaged with `requirements.txt` for easy setup
 
-
 ---
 
 ### 🔹 [Diabetes Prediction](./diabetes-prediction/)
@@ -97,6 +112,21 @@ ML-Projects/
   * Model comparison with accuracy metrics
   * Predicts new user input via script interface
 
+---
+
+### 🔹 [Credit Card Fraud Detector](./creditcard-fraud-detector/)
+
+> Detects fraudulent credit card transactions using multiple **supervised machine learning models** with EDA, visualization, and model evaluation.
+
+* **Algorithms**: Logistic Regression, Random Forest, XGBoost, SVM, KNN
+* **Dataset**: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+* **Libraries**: `pandas`, `numpy`, `scikit-learn`, `xgboost`, `matplotlib`, `seaborn`, `datacmp`, `joblib`
+* **Highlights**:
+
+  * Visual EDA with correlation heatmaps and top features
+  * Comparison of 5 ML algorithms (XGBoost: **99.96% accuracy**)
+  * Exported best-performing model (`xgboost_fraud_model.pkl`)
+  * Includes Jupyter notebook and standalone Python script
 
 ---
 
@@ -115,10 +145,10 @@ ML-Projects/
 **Moustafa Mohamed**
 Aspiring AI Developer with a focus on **Machine Learning, Deep Learning**, and **LLM Engineering**.
 
-* [LinkedIn](https://www.linkedin.com/in/moustafamohamed01/)
-* [GitHub](https://github.com/MoustafaMohamed01)
-* [Kaggle](https://www.kaggle.com/moustafamohamed01)
-* [Portfolio Website](https://moustafamohamed.netlify.app/)
+[LinkedIn](https://www.linkedin.com/in/moustafamohamed01/) 
+• [GitHub](https://github.com/MoustafaMohamed01)
+• [Kaggle](https://www.kaggle.com/moustafamohamed01)
+• [Portfolio Website](https://moustafamohamed.netlify.app/)
 
 ---
 
