@@ -12,7 +12,6 @@ Due to size restrictions, it is not included in this repository.
 
 ```
 ./data/creditcard.csv
-
 ```
 
 Once added, you can run the notebooks or scripts.
