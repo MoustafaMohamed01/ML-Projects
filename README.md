@@ -55,7 +55,7 @@ ML-Projects/
 │   ├── requirements.txt                
 │   └── README.md
 │
-└── README.md                         # Project documentation
+└── README.md         
 
 │
 └── README.md                              # Main repository documentation
