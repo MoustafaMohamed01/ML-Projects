@@ -64,3 +64,13 @@ for name, model in models.items():
     print("Classification Report:")
     print(classification_report(y_test, y_pred))
 
+
+model = XGBClassifier(use_label_encoder=False, eval_metric='logloss')
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+print(f'Accuracy: {accuracy_score(y_pred, y_test)}')
+
+import joblib
+joblib.dump(model, 'model/xgboost_fraud_model.pkl')
+
