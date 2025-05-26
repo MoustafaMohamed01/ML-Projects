@@ -196,3 +196,42 @@ plt.show()
 sns.distplot(np.log(df['Price']))
 plt.show()
 
+X = df.drop(columns=['Price'])
+y = np.log(df['Price'])
+
+from sklearn.svm import SVR
+from xgboost import XGBRegressor
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score, mean_absolute_error
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor, ExtraTreesRegressor
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
+
+step1 = ColumnTransformer(
+    transformers=[
+        ('col_tnf', OneHotEncoder(sparse_output=False, drop='first'),[0,1,7,10,11])
+    ],
+    remainder='passthrough'
+)
+
+step2 = LinearRegression()
+
+pipe = Pipeline(
+    [
+        ('step1', step1),
+        ('step2', step2)
+    ]
+)
+
+pipe.fit(X_train, y_train)
+
+y_pred = pipe.predict(X_test)
+
+print('R2 Score = ', r2_score(y_test, y_pred))
+print('MAE = ', mean_absolute_error(y_test, y_pred))
