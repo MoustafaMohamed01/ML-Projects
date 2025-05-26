@@ -141,3 +141,58 @@ print(df.corr(numeric_only=True)['Price'])
 
 df.drop(columns=['Hybrid', 'Flash'], inplace=True)
 
+print(df['Gpu'].value_counts())
+
+df['GpuBrand'] = df['Gpu'].apply(lambda x:x.split()[0])
+
+print(df['GpuBrand'].value_counts())
+
+sns.barplot(x=df['GpuBrand'], y=df['Price'], estimator=np.median)
+plt.show()
+
+df.drop(columns=['Gpu'], inplace=True)
+print(df['OpSys'].value_counts())
+
+sns.barplot(x=df['OpSys'], y=df['Price'])
+plt.xticks(rotation='vertical')
+plt.show()
+
+def clean_opsys(os):
+    os = os.strip().upper()
+    if 'WINDOWS' in os:
+        return 'Windows'
+    elif 'MAC' in os or 'MACOS' in os:
+        return 'macOS'
+    elif 'LINUX' in os:
+        return 'Linux'
+    elif 'CHROME' in os:
+        return 'Chrome OS'
+    elif 'ANDROID' in os:
+        return 'Android'
+    elif 'NO OS' in os:
+        return 'No OS'
+    else:
+        return 'Other'
+
+df['os'] = df['OpSys'].apply(clean_opsys)
+df.drop(columns=['OpSys'], inplace=True)
+
+sns.barplot(x=df['os'], y=df['Price'])
+plt.xticks(rotation='vertical')
+plt.show()
+
+sns.distplot(df['Weight'])
+plt.show()
+
+sns.scatterplot(x=df['Weight'], y=df['Price'])
+plt.show()
+
+print(df.corr(numeric_only=True)['Price'])
+print(df.corr(numeric_only=True))
+
+sns.heatmap(df.corr(numeric_only=True))
+plt.show()
+
+sns.distplot(np.log(df['Price']))
+plt.show()
+
