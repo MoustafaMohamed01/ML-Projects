@@ -213,25 +213,90 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, A
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
 
-step1 = ColumnTransformer(
-    transformers=[
-        ('col_tnf', OneHotEncoder(sparse_output=False, drop='first'),[0,1,7,10,11])
-    ],
-    remainder='passthrough'
-)
+categorical_cols = X.select_dtypes(include='object').columns.tolist()
+numerical_cols = X.select_dtypes(exclude='object').columns.tolist()
 
-step2 = LinearRegression()
-
-pipe = Pipeline(
+preprocessor = ColumnTransformer(
     [
-        ('step1', step1),
-        ('step2', step2)
+        ('onehot', OneHotEncoder(handle_unknown='ignore'), categorical_cols),
+        ('scale', StandardScaler(), numerical_cols)
     ]
 )
 
-pipe.fit(X_train, y_train)
+models = {
+    'Linear Regression': LinearRegression(),
+    'Ridge': Ridge(),
+    'Lasso': Lasso(),
+    'KNN': KNeighborsRegressor(),
+    'Decision Tree': DecisionTreeRegressor(),
+    'Random Forest': RandomForestRegressor(),
+    'Gradient Boosting': GradientBoostingRegressor(),
+    'AdaBoost': AdaBoostRegressor(),
+    'Extra Trees': ExtraTreesRegressor(),
+    'SVR': SVR(),
+    'XGBoost': XGBRegressor()
+}
 
-y_pred = pipe.predict(X_test)
+results = []
 
-print('R2 Score = ', r2_score(y_test, y_pred))
-print('MAE = ', mean_absolute_error(y_test, y_pred))
+for name, model in models.items():
+    pipe = Pipeline(
+        [
+            ('preprocessing', preprocessor),
+            ('regressor', model)
+        ]
+    )
+    pipe.fit(X_train, y_train)
+    y_pred = pipe.predict(X_test)
+
+    r2 = r2_score(y_test, y_pred)
+    mae = mean_absolute_error(y_test, y_pred)
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    
+    results.append(
+        {
+            'Model': name,
+            'R2 Score': r2,
+            'MAE': mae,
+            'RMSE': rmse
+        }
+    )
+
+results_df = pd.DataFrame(results)
+results_df = results_df.sort_values(by='R2 Score', ascending=False).reset_index(drop=True)
+print(results_df)
+
+best_model = Pipeline([
+    ('preprocessing', preprocessor),
+    ('regressor', SVR())
+])
+
+best_model.fit(X, y)
+
+joblib.dump(best_model, 'laptop_price_model.pkl')
+
+print("Model saved as 'best_laptop_price_model.pkl'")
+
+
+model = best_model
+
+sample = pd.DataFrame([{
+    'Company': 'Dell',
+    'TypeName': 'Notebook',
+    'Ram': 8,
+    'Weight': 1.8,
+    'TouchScreen': 0,
+    'IPS': 1,
+    'ppi': 141.21,
+    'CpuBrand': 'Intel Core i5',
+    'SSD': 256,
+    'HDD': 0,
+    'GpuBrand': 'Intel',
+    'os': 'Windows 10'
+}])
+
+log_price = model.predict(sample)[0]
+predicted_price = np.exp(log_price)
+
+print(f"Predicted Laptop Price: ${predicted_price:.2f}")
+
