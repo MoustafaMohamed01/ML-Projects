@@ -1,3 +1,4 @@
+```
 LaptopPricePrediction/
 │
 ├── data/
@@ -15,3 +16,4 @@ LaptopPricePrediction/
 │
 ├── best_model.pkl                # Saved best model (SVR)
 └── README.md                     # Project description & instructions
+```
