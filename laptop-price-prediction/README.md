@@ -1,19 +1,27 @@
 ```
-LaptopPricePrediction/
+laptop-price-prediction/
 │
 ├── data/
-│   └── laptops.csv                # Your main dataset
+│   └── raw_laptops.csv               # Original/raw dataset CSV
+│   └── cleaned_laptops.csv           # Cleaned dataset CSV after preprocessing
 │
 ├── distributions/
-│   └── feature_distributions.png  # Plots or visuals
+│   └── price_distribution.png        # Visualization images (histograms, boxplots, etc.)
+│   └── ram_histogram.png
+│   └── other_plots.png
 │
 ├── python/
-│   ├── data_preprocessing.py     # Preprocessing steps
-│   ├── model_training.py         # Training multiple models & evaluation
-│   ├── best_model_saver.py       # Save the best model as .pkl
-│   ├── predict_sample.py         # Load model & make prediction on new sample
-│   └── config.py                 # Constants, file paths
+│   ├── clean_data.py                 # Script to load raw data, clean, preprocess, save cleaned data
+│   ├── plot_distributions.py        # Script to generate and save visualizations from cleaned data
+│   ├── train_model.py                # Script to train ML models, evaluate, save best model
+│   ├── predict.py                   # Script for loading saved model and making predictions on new data
+│   └── utils.py                     # Optional: helper functions for cleaning, plotting, etc.
 │
-├── best_model.pkl                # Saved best model (SVR)
-└── README.md                     # Project description & instructions
+├── models/
+│   └── best_model.pkl                # Serialized best model (pickle file)
+│
+├── requirements.txt                 # List of Python packages needed
+├── README.md                       # Project overview, setup instructions
+└── .gitignore                      # To ignore unnecessary files in version control
+
 ```
