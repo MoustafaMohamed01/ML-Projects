@@ -18,15 +18,15 @@ laptop-price-prediction/
 │
 ├── distributions/                    # Folder containing all visualization images
 │
-├── python/
-│   ├── data_cleaning_and_eda.py      # Data cleaning, feature engineering, and EDA script
-│   ├── train_model.py                 # Model training, comparison, and saving best model
-│   └── predict.py                    # Script for making price predictions using the trained model
-│
 ├── notebooks/
 │   ├── data_cleaning_and_eda.ipynb       # Data cleaning, feature engineering, and EDA script
 │   ├── train_model.ipynb                 # Model training, comparison, and saving best model
 │   └── predict.ipynb                     # notebook for making price predictions using the trained model
+│
+├── python/
+│   ├── data_cleaning_and_eda.py      # Data cleaning, feature engineering, and EDA script
+│   ├── train_model.py                 # Model training, comparison, and saving best model
+│   └── predict.py                    # Script for making price predictions using the trained model
 │
 ├── models/
 │   └── best_laptop_price_model.pkl   # Serialized best performing regression model
