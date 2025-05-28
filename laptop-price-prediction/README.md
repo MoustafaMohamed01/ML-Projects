@@ -14,25 +14,24 @@ laptop-price-prediction/
 │
 ├── data/
 │   ├── laptop_data.csv                # Raw laptop dataset
-│   ├── cleaned_laptop_data.csv       # Cleaned and preprocessed dataset
+│   └── cleaned_laptop_data.csv       # Cleaned and preprocessed dataset
 │
 ├── distributions/                    # Folder containing all visualization images
 │
 ├── python/
 │   ├── data_cleaning_and_eda.py      # Data cleaning, feature engineering, and EDA script
 │   ├── train_model.py                 # Model training, comparison, and saving best model
-│   ├── predict.py                    # Script for making price predictions using the trained model
-│
-├── notebooks/                        # Jupyter notebooks replicating python scripts
-│   ├── data_cleaning_and_eda.ipynb
-│   ├── train_model.ipynb
-│   ├── predict.ipynb
+│   └── predict.py                    # Script for making price predictions using the trained model
 │
 ├── models/
 │   └── best_laptop_price_model.pkl   # Serialized best performing regression model
 │
+├── streamlit_app/
+│   ├── app.py                        # Streamlit app for interactive laptop price prediction
+│   └── screenshot.jpg               # Screenshot image(s) of the Streamlit app interface
+│
 ├── requirements.txt                  # Python dependencies
-├── README.md                        # Project documentation
+└── README.md                        # Project documentation
 
 ````
 
@@ -105,13 +104,28 @@ python python/train_model.py
 
 This script loads the cleaned data, trains multiple models, evaluates their performance, and saves the best model.
 
-### 4. Make Predictions
+### 4. Make Predictions (CLI)
 
 ```bash
 python python/predict.py
 ```
 
 Use this script to load the trained model and predict laptop prices given input features.
+
+### 5. Run Streamlit App
+
+```bash
+streamlit run app.py
+```
+
+This launches the interactive web app where you can enter laptop specs and get instant price predictions with a user-friendly interface.
+
+---
+
+## Screenshots
+
+![Laptop Price Prediction App](streamlit_app/screenshot.jpg)
+*Screenshot of the laptop price prediction Streamlit app interface.*
 
 ---
 
@@ -126,9 +140,9 @@ Key Python libraries used in this project:
 * scikit-learn
 * xgboost
 * joblib
-* datacmp (for dataset analysis)
+* streamlit
 
-Please see `requirements.txt` for full list.
+Please see `requirements.txt` for the full list.
 
 ---
 
@@ -144,6 +158,7 @@ The `distributions/` folder contains detailed plots showcasing data distribution
 ---
 
 ## Author
+
 Created by **Moustafa Mohamed** - feel free to reach out!
 
 * GitHub: [MoustafaMohamed01](https://github.com/MoustafaMohamed01)
