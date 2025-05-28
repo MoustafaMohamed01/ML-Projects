@@ -5,4 +5,5 @@ seaborn
 scikit-learn
 xgboost
 joblib
+streamlit
 datacmp
