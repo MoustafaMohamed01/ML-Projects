@@ -159,10 +159,12 @@ The `distributions/` folder contains detailed plots showcasing data distribution
 
 ## Author
 
-Created by **Moustafa Mohamed** - feel free to reach out!
+Created by **Moustafa Mohamed**
+Aspiring AI Developer with a focus on **Machine Learning, Deep Learning**, and **LLM Engineering**.
 
-* GitHub: [MoustafaMohamed01](https://github.com/MoustafaMohamed01)
-* Linkedin: [Moustafa Mohamed](https://www.linkedin.com/in/moustafamohamed01/)
-* Kaggle: [moustafamohamed01](https://www.kaggle.com/moustafamohamed01)
+* **GitHub**: [MoustafaMohamed01](https://github.com/MoustafaMohamed01)
+* **Linkedin**: [Moustafa Mohamed](https://www.linkedin.com/in/moustafamohamed01/)
+* **Kaggle**: [moustafamohamed01](https://www.kaggle.com/moustafamohamed01)
+* **Portfolio**: [moustafamohamed](https://moustafamohamed.netlify.app/)
 
 ---
