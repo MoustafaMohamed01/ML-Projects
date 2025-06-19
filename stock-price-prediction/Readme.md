@@ -88,7 +88,7 @@ Saved as: `best_stock_prediction_model.pkl`
 
 ## Visualizations
 
-![Model Accuracy Comparison](stock-price-prediction/images/comparison-of-ml-models-acc.png)
+![Model Accuracy Comparison](images/comparison-of-ml-models-acc.png)
 
 ---
 
