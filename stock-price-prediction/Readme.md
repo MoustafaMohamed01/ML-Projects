@@ -1,82 +1,104 @@
-# Stock Price Movement Prediction using KNN
+# Stock Market Movement Classification using Machine Learning
 
-This project uses historical stock data of **TATA Global** to predict whether the stock's closing price will increase or decrease the next day using the **K-Nearest Neighbors (KNN)** classification algorithm.
+This project implements and compares multiple machine learning models to predict the **next-day price movement** (up/down) of a stock based on technical features derived from Open, Close, High, and Low prices.
 
----
-
-## Technologies Used
-
-* Python
-* NumPy
-* Pandas
-* Seaborn & Matplotlib (for visualization)
-* Scikit-learn (for modeling)
-* Quandl (for financial data access)
-* [DataCmp](https://pypi.org/project/datacmp/) (for quick data analysis)
+It includes data preprocessing, feature engineering, model training with hyperparameter tuning using `GridSearchCV`, visualization of model performance, and saving the best-performing model.
 
 ---
 
-## Dataset
+## Overview
 
-The dataset used is named `NSE-TATAGLOBAL11.csv` and contains historical stock prices with features like:
-
-* `Open`
-* `Close`
-* `High`
-* `Low`
-
----
-
-## Features Engineered
-
-Two new features were created:
-
-* `Open - Close`: Difference between opening and closing price
-* `High - Low`: Difference between daily high and low
+- **Goal:** Classify whether the stock will go **up (1)** or **down (0)** the next day.
+- **Approach:** Supervised learning using:
+  - Logistic Regression
+  - K-Nearest Neighbors (KNN)
+  - Decision Tree
+  - Random Forest
+  - Gradient Boosting
+  - Support Vector Machine (SVC)
+  - XGBoost
 
 ---
 
-## Target Variable
+## Tech Stack
 
-The target is to **predict the stock's movement**:
-
-* `1` if the next day's `Close` > current `Close`
-* `-1` otherwise
-
----
-
-## Model Training
-
-* Model used: **K-Nearest Neighbors (KNN)**
-* Hyperparameter tuning: `GridSearchCV` over different `n_neighbors` values
-* Evaluation: **Train and Test Accuracy**
+- Python
+- NumPy, Pandas
+- Scikit-learn
+- XGBoost
+- Seaborn & Matplotlib
+- Joblib (for model saving)
 
 ---
 
-## Results
+## Project Structure
 
-After training:
+```
+ML-Projects/
+stock-price-prediction
+   ├── data/
+   │   └── NSE-TATAGLOBAL11.csv
+   ├── images/
+   │   └── comparison-of-ml-models-acc.png
+   ├── best_stock_prediction_model.pkl
+   ├── stock-price-prediction.ipynb
+   ├── stock-price-prediction.py
+   └── README.md
 
-* **Train Accuracy**: \~`0.88`
-* **Test Accuracy**: \~`0.86`
-
-> You can expect the model to give a general sense of stock direction, but it's not financial advice.
+````
 
 ---
 
 ## How to Run
 
-1. Clone this repo.
-2. Ensure the CSV file `NSE-TATAGLOBAL11.csv` is in the project folder.
-3. Install dependencies:
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/MoustafaMohamed01/ML-Projects.git
+   cd ML-Projects/stock-price-prediction
+   ````
+
+2. **Install dependencies:**
 
    ```bash
-   pip install pandas numpy seaborn matplotlib scikit-learn quandl datacmp
+   pip install -r requirements.txt
    ```
-4. Run the notebook or Python script.
+
+3. **Run the notebook:**
+
+   * Open `stock_model_comparison.ipynb` in Jupyter Notebook or VS Code and execute all cells.
 
 ---
 
-## Note
+## Sample Output
 
-This project is for **educational purposes only** and should not be used for real financial decisions.
+| Model                      | Train Accuracy | Test Accuracy |
+| -------------------------- | -------------- | ------------- |
+| **SVC**                    | 0.8768         | **0.8706**    |
+| LogisticRegression         | 0.8670         | 0.8673        |
+| RandomForestClassifier     | 0.8908         | 0.8673        |
+| DecisionTreeClassifier     | 0.8768         | 0.8576        |
+| GradientBoostingClassifier | 0.8897         | 0.8511        |
+| KNeighborsClassifier       | 0.8832         | 0.8479        |
+| XGBClassifier              | 0.9200         | 0.8447        |
+
+Best model: **SVC**
+Saved as: `best_stock_prediction_model.pkl`
+
+---
+
+## Visualizations
+
+![Model Accuracy Comparison](stock-price-prediction/images/comparison-of-ml-models-acc.png)
+
+---
+
+
+
+---
+
+## Contact
+
+**Moustafa Mohamed**
+[LinkedIn](https://www.linkedin.com/in/moustafamohamed01/) | [GitHub](https://github.com/MoustafaMohamed01) | [Kaggle](https://www.kaggle.com/moustafamohamed01) | [Portfolio](https://moustafamohamed.netlify.app/)
+
+---
