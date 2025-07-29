@@ -38,9 +38,6 @@ ML-Projects/
 │   ├── data/
 │   │   └── diabetes.csv
 │   └── images/
-│       ├── diabetes_countplot.png
-│       ├── diabetes_heatmap.png
-│       └── diabetes_pairplot.png
 │
 ├── creditcard-fraud-detector/
 │   ├── data/
@@ -48,8 +45,6 @@ ML-Projects/
 │   ├── model/
 │   │   └── xgboost_fraud_model.pkl
 │   ├── plots/
-│   │   ├── correlation_heatmap.png
-│   │   └── top10_correlated_features.png
 │   ├── credit_fraud_detection.ipynb
 │   ├── credit_fraud_detection.py
 │   ├── requirements.txt
@@ -60,7 +55,6 @@ ML-Projects/
 │   │   ├── laptop_data.csv
 │   │   └── cleaned_laptop_data.csv
 │   ├── distributions/
-│   │   └── (visualization images)
 │   ├── models/
 │   │   └── best_laptop_price_model.pkl
 │   ├── python/
@@ -77,11 +71,14 @@ ML-Projects/
 │   ├── data/
 │   │   └── NSE-TATAGLOBAL11.csv
 │   ├── images/
-│   │   └── comparison-of-ml-models-acc.png
-│   ├── best_stock_prediction_model.pkl
-│   ├── stock-price-prediction.ipynb
-│   ├── stock-price-prediction.py
 │   └── README.md
+
+├── loan-status-prediction/
+│   ├── loan_status_model.py           # Main executable script
+│   ├── loan_status_model.ipynb        # Jupyter notebook version (with visual outputs)
+│   ├── requirements.txt
+│   ├── graphs/                        # Generated visualizations
+│   └── README.md                      # Project documentation
 │
 └── README.md                              # Main repository documentation
 ```
@@ -186,6 +183,22 @@ ML-Projects/
   * Model tuning using GridSearchCV
   * Accuracy comparison chart with dark theme visualization
   * Saved best model (`SVC`) as `.pkl`
+
+---
+
+### 🔹 [Loan Status Prediction](./loan-status-prediction/)
+
+> A machine learning project to predict loan approval outcomes using applicant demographic, financial, and credit data.  
+> The project employs Support Vector Machine (SVM) with a linear kernel and includes extensive data preprocessing, exploratory data analysis (EDA), and visualization.
+
+* **Algorithm**: Support Vector Machine (Linear Kernel)  
+* **Dataset**: [Kaggle – Loan Prediction Dataset](https://www.kaggle.com/datasets/ninzaami/loan-predication)  
+* **Libraries**: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`  
+* **Highlights**:  
+  - Handling missing values and categorical encoding (binary and one-hot)  
+  - Visualizations covering loan status distribution, marital status effects, property area impact, income distribution, and feature correlations  
+  - Model evaluation with stratified train-test split and accuracy metrics  
+  - Clean and modular project structure with both script and notebook versions  
 
 ---
 
