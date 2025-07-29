@@ -107,6 +107,8 @@ plt.show()
 X = df.drop(columns=['Loan_Status'])
 y = df['Loan_Status']
 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, stratify=y, random_state=2)
+
 classifier = svm.SVC(kernel='linear')
 classifier.fit(X_train, y_train)
 
