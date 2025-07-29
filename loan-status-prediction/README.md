@@ -34,7 +34,10 @@ loan-status-prediction/
 
 ## Dataset Summary
 
-The dataset (`dataset.csv`) includes the following features:
+- **Source**: [Kaggle – Loan Prediction Dataset](https://www.kaggle.com/datasets/ninzaami/loan-predication)
+- **File**: `dataset.csv`
+
+This dataset contains demographic, income, and credit-related information on loan applicants. Below are the key features:
 
 | Feature              | Description                                |
 |----------------------|--------------------------------------------|
