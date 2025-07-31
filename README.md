@@ -1,86 +1,26 @@
 # Machine Learning Projects
 
 Welcome to my **Machine Learning Portfolio Repository**.
-This repository showcases a growing collection of machine learning projects built using industry-standard tools and techniques. Each project is focused on solving real-world problems with proper data preprocessing, model selection, and performance evaluation.
+
+This repository contains a growing collection of machine learning projects that solve real-world problems using industry-standard tools, clean code practices, and comprehensive data workflows — from preprocessing and feature engineering to model training, evaluation, and deployment.
 
 ---
 
 ## Repository Structure
 
 ```
+
 ML-Projects/
 │
-├── sonar-object-classification/           # Binary classification of sonar signals
-│   ├── sonar_object_classification.ipynb
-│   ├── sonar_object_classification.py
-│   ├── requirements.txt
-│   ├── README.md
-│   └── data/
-│       └── sonar.all-data
-│
-├── Car-Price-Prediction/                  # Linear Regression + Streamlit app for car prices
-│   ├── model_1/
-│   │   ├── Car_Price_Prediction.ipynb
-│   │   ├── app.py
-│   │   ├── Car_Price_Prediction.py
-│   │   ├── LinearRegressionModel.pkl
-│   │   └── data/
-│   │       ├── unique_values.csv
-│   │       └── quikr_car.csv
-│   ├── requirements.txt
-│   └── README.md
-│
-├── diabetes-prediction/                   # Classification using health features
-│   ├── diabetes_prediction.ipynb
-│   ├── diabetes_prediction.py
-│   ├── requirements.txt
-│   ├── README.md
-│   ├── data/
-│   │   └── diabetes.csv
-│   └── images/
-│
-├── creditcard-fraud-detector/
-│   ├── data/
-│   │   └── README.md
-│   ├── model/
-│   │   └── xgboost_fraud_model.pkl
-│   ├── plots/
-│   ├── credit_fraud_detection.ipynb
-│   ├── credit_fraud_detection.py
-│   ├── requirements.txt
-│   └── README.md
-│
-├── laptop-price-prediction/               # Laptop price prediction using regression + Streamlit app
-│   ├── data/
-│   │   ├── laptop_data.csv
-│   │   └── cleaned_laptop_data.csv
-│   ├── distributions/
-│   ├── models/
-│   │   └── best_laptop_price_model.pkl
-│   ├── python/
-│   │   ├── data_cleaning_and_eda.py
-│   │   ├── train_model.py
-│   │   └── predict.py
-│   ├── streamlit_app/
-│   │   ├── app.py
-│   │   └── screenshot1.png
-│   ├── requirements.txt
-│   └── README.md
-│
-├── stock-price-prediction/                # Stock movement classification using multiple ML models
-│   ├── data/
-│   │   └── NSE-TATAGLOBAL11.csv
-│   ├── images/
-│   └── README.md
-
-├── loan-status-prediction/
-│   ├── loan_status_model.py           # Main executable script
-│   ├── loan_status_model.ipynb        # Jupyter notebook version (with visual outputs)
-│   ├── requirements.txt
-│   ├── graphs/                        # Generated visualizations
-│   └── README.md                      # Project documentation
-│
+├── sonar-object-classification/           # Sonar signal classification (Mine vs. Rock)
+├── Car-Price-Prediction/                  # Regression + Streamlit app for car pricing
+├── diabetes-prediction/                   # Disease classification based on health metrics
+├── creditcard-fraud-detector/             # Anomaly detection using XGBoost and others
+├── laptop-price-prediction/               # Regression + Streamlit app for laptops
+├── stock-price-prediction/                # Stock movement classifier
+├── loan-status-prediction/                # Predicting loan approvals
 └── README.md                              # Main repository documentation
+
 ```
 
 ---
@@ -89,151 +29,118 @@ ML-Projects/
 
 ### 🔹 [Sonar Object Classification](./sonar-object-classification/)
 
-> **Binary classification** of sonar signals to detect whether the object is a **Rock** or a **Mine** using **Logistic Regression**.
+> **Binary classification** of sonar signals to detect whether the object is a **mine** or a **rock** using a range of supervised machine learning models.
 
-* **Algorithm**: Logistic Regression
-* **Dataset**: Sonar signals with 60 frequency-based features
-* **Libraries**: `scikit-learn`, `pandas`, `numpy`
+* **Algorithms**: Logistic Regression, SVM, KNN, Decision Tree, Random Forest, Naive Bayes, Gradient Boosting  
+* **Dataset**: [UCI Sonar Dataset](https://archive.ics.uci.edu/ml/datasets/connectionist+bench/sonar)
+* **Libraries**: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `seaborn`
 * **Highlights**:
-
-  * Feature scaling with `StandardScaler`
-  * Stratified train-test split
-  * Evaluation with accuracy, classification report, and confusion matrix
+  - Feature scaling with `StandardScaler`
+  - Principal Component Analysis (PCA) for 2D visualization
+  - Comparison of 7 classifiers
+  - Best model: **K-Nearest Neighbors** (90.48% accuracy)
+  - Dark-themed visualizations (saved in `graphs/` folder)
 
 ---
 
 ### 🔹 [Car Price Prediction](./Car-Price-Prediction/)
 
-> Predicts used car prices based on **model, company, year, mileage, and fuel type** using **Linear Regression**.
-> Includes a deployed **Streamlit web application** for interactive use.
+> Predicts used car prices using a **Linear Regression** model with a **Streamlit web interface**.
 
 * **Algorithm**: Linear Regression
-* **Dataset**: [Quikr Car Dataset](https://github.com/rajtilakls2510/car_price_predictor/blob/master/quikr_car.csv)
 * **Libraries**: `scikit-learn`, `pandas`, `numpy`, `streamlit`, `pickle`
 * **Highlights**:
-
-  * Data cleaning and preprocessing of messy real-world data
-  * Encoding categorical features and handling outliers
-  * Streamlit interface to input car details and predict prices
-  * Packaged with `requirements.txt` for easy setup
+  - Feature engineering and data cleaning
+  - Deployment-ready interface for real-time prediction
+  - Modular scripts and saved model
 
 ---
 
 ### 🔹 [Diabetes Prediction](./diabetes-prediction/)
 
-> A machine learning project to predict diabetes using the **Pima Indians Diabetes Dataset**.
-> Includes model comparison and visual analysis.
+> Predicts diabetes likelihood using health-related metrics with multiple classifiers.
 
-* **Algorithms**: SVM, Logistic Regression, Decision Tree, Random Forest
-* **Dataset**: [Kaggle - Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
-* **Libraries**: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`
+* **Algorithms**: SVM, Logistic Regression, Random Forest, Decision Tree
+* **Dataset**: Pima Indians Diabetes Dataset
 * **Highlights**:
-
-  * Cleaned and preprocessed the dataset
-  * Dark-themed Seaborn visualizations (countplot, heatmap, pairplot)
-  * Model comparison with accuracy metrics
-  * Predicts new user input via script interface
+  - Dark-mode visualizations
+  - Model comparison and metric evaluation
+  - User input prediction via script
 
 ---
 
-### 🔹 [Credit Card Fraud Detector](./creditcard-fraud-detector/)
+### 🔹 [Credit Card Fraud Detection](./creditcard-fraud-detector/)
 
-> Detects fraudulent credit card transactions using multiple **supervised machine learning models** with EDA, visualization, and model evaluation.
+> Detects fraudulent transactions using advanced classification models including **XGBoost**.
 
-* **Algorithms**: Logistic Regression, Random Forest, XGBoost, SVM, KNN
-* **Dataset**: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
-* **Libraries**: `pandas`, `numpy`, `scikit-learn`, `xgboost`, `matplotlib`, `seaborn`, `datacmp`, `joblib`
+* **Algorithms**: XGBoost, Logistic Regression, SVM, Random Forest, KNN
 * **Highlights**:
-
-  * Visual EDA with correlation heatmaps and top features
-  * Comparison of 5 ML algorithms (XGBoost: **99.96% accuracy**)
-  * Exported best-performing model (`xgboost_fraud_model.pkl`)
-  * Includes Jupyter notebook and standalone Python script
+  - EDA with `DataCmp` and visualizations
+  - XGBoost achieved **99.96% accuracy**
+  - Exported model for deployment
 
 ---
 
 ### 🔹 [Laptop Price Prediction](./laptop-price-prediction/)
 
-> Predicts laptop prices based on specifications like **brand, RAM, storage, CPU, GPU, screen size/resolution, and more** using multiple regression models.
-> Includes extensive EDA, feature engineering, and a **Streamlit web app** for real-time price predictions.
+> Predicts laptop prices using regression models and delivers results via a **Streamlit app**.
 
-* **Algorithms**: Linear Regression, Random Forest, XGBoost, and more
-* **Dataset**: Raw and cleaned laptop specification data
-* **Libraries**: `pandas`, `numpy`, `scikit-learn`, `xgboost`, `matplotlib`, `seaborn`, `streamlit`, `joblib`
+* **Features**: Screen resolution, CPU, GPU, RAM, storage, and more
 * **Highlights**:
-
-  * Detailed data cleaning and feature engineering (e.g., Pixels Per Inch from resolution)
-  * Visualization of price distributions and feature impacts
-  * Comparison and evaluation of multiple regression models
-  * Deployed Streamlit app with interactive input and prediction
-  * Well-structured project with modular Python scripts and saved model
+  - Rich EDA and feature engineering
+  - Deployment-ready with modular code
+  - Comparison of regression models
 
 ---
 
 ### 🔹 [Stock Price Prediction](./stock-price-prediction/)
 
-> Predicts the **next-day stock movement** (up/down) using multiple classification models with engineered features like `Open - Close` and `High - Low`.
+> Predicts next-day stock movement using engineered financial features and ML classifiers.
 
-* **Algorithms**: Logistic Regression, KNN, Decision Tree, Random Forest, Gradient Boosting, SVC, XGBoost
-* **Dataset**: NSE Tata Global stock price data
-* **Libraries**: `scikit-learn`, `xgboost`, `joblib`, `matplotlib`, `seaborn`
+* **Algorithms**: SVM, Random Forest, KNN, XGBoost, etc.
 * **Highlights**:
-
-  * Feature engineering from historical stock prices
-  * Model tuning using GridSearchCV
-  * Accuracy comparison chart with dark theme visualization
-  * Saved best model (`SVC`) as `.pkl`
+  - Binary classification (Up/Down)
+  - Accuracy heatmap comparison
+  - GridSearchCV tuning
 
 ---
 
 ### 🔹 [Loan Status Prediction](./loan-status-prediction/)
 
-> A machine learning project to predict loan approval outcomes using applicant demographic, financial, and credit data.  
-> The project employs Support Vector Machine (SVM) with a linear kernel and includes extensive data preprocessing, exploratory data analysis (EDA), and visualization.
+> Predicts loan approval status based on financial and personal attributes.
 
-* **Algorithm**: Support Vector Machine (Linear Kernel)  
-* **Dataset**: [Kaggle – Loan Prediction Dataset](https://www.kaggle.com/datasets/ninzaami/loan-predication)  
-* **Libraries**: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`  
-* **Highlights**:  
-  - Handling missing values and categorical encoding (binary and one-hot)  
-  - Visualizations covering loan status distribution, marital status effects, property area impact, income distribution, and feature correlations  
-  - Model evaluation with stratified train-test split and accuracy metrics  
-  - Clean and modular project structure with both script and notebook versions  
+* **Algorithm**: Support Vector Machine (Linear Kernel)
+* **Highlights**:
+  - Handling of missing values and categorical encoding
+  - Clean visualizations and performance metrics
+  - Well-structured scripts and notebook
 
 ---
 
 ## Tech Stack
 
-* **Languages**: Python 3.7+
-* **Libraries**:
-  `pandas`, `numpy`, `scikit-learn`, `streamlit`, `pickle`, `matplotlib`, `seaborn`, `datacmp`, `joblib`, `xgboost`
-* **Tools**:
-  Jupyter Notebook, Visual Studio Code, Git, GitHub, [DataCmp](https://pypi.org/project/datacmp/)
-
----
-
-## How to Contribute
-
-Have an idea, bug fix, or feature suggestion?
-You're welcome to fork this repository, make improvements, and submit a pull request!
-
----
-
-## Support
-
-If you find these projects helpful or insightful, please consider giving the repo a **star**.
-Your support motivates continued learning and sharing!
+- **Languages**: Python 3.7+
+- **ML Libraries**: `scikit-learn`, `xgboost`, `joblib`, `pandas`, `numpy`
+- **Visualization**: `matplotlib`, `seaborn`, `streamlit`
+- **Other Tools**: Jupyter Notebook, Git, VSCode, Kaggle, DataCmp
 
 ---
 
 ## About Me
 
-**Moustafa Mohamed**
-Aspiring AI Developer with a focus on **Machine Learning, Deep Learning**, and **LLM Engineering**.
+**Moustafa Mohamed**  
+Aspiring AI Developer | Focused on Machine Learning, Deep Learning & LLM Engineering
 
 * **GitHub**: [MoustafaMohamed01](https://github.com/MoustafaMohamed01)
 * **Linkedin**: [Moustafa Mohamed](https://www.linkedin.com/in/moustafamohamed01/)
 * **Kaggle**: [moustafamohamed01](https://www.kaggle.com/moustafamohamed01)
 * **Portfolio**: [moustafamohamed](https://moustafamohamed.netlify.app/)
+
+---
+
+## ⭐ Contribute & Support
+
+If you find this repository helpful, please consider giving it a ⭐.  
+Contributions, feedback, and ideas are always welcome!
 
 ---
