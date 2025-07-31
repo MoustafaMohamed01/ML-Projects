@@ -13,7 +13,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.decomposition import PCA
 
-df = pd.read_csv('/kaggle/input/sonar-data/sonar data.csv', header=None)
+df = pd.read_csv('data/sonar data.csv', header=None)
 
 print(df.info())
 
