@@ -25,6 +25,20 @@ ML-Projects/
 
 ---
 
+## Projects Overview
+
+| Project                         | Description                                               | Type             | Model(s) Used                       | Demo / Notebook                                                                 |
+|---------------------------------|-----------------------------------------------------------|------------------|-------------------------------------|----------------------------------------------------------------------------------|
+| **Sonar Object Classification** | Classify sonar signals as rock or mine                    | Classification   | KNN, SVM, RF, LR, etc.              | [Notebook](./sonar-object-classification/sonar_object_classification.ipynb)     |
+| **Car Price Prediction**       | Predict car prices + Streamlit UI                         | Regression       | Linear Regression                   | [App (Streamlit)](./Car-Price-Prediction/model_1/app.py) • [Notebook](./Car-Price-Prediction/model_1/Car_Price_Prediction.ipynb) |
+| **Diabetes Prediction**        | Predict diabetes risk using medical features              | Classification   | SVM, RF, LR, DT                     | [Notebook](./diabetes-prediction/diabetes_prediction.ipynb)                      |
+| **Credit Card Fraud Detection**| Detect fraudulent transactions                            | Anomaly Detection| XGBoost, RF, SVM, LR                | [Notebook](./creditcard-fraud-detector/credit_fraud_detection.ipynb)            |
+| **Laptop Price Prediction**    | Predict laptop prices + Streamlit UI                      | Regression       | RF, XGBoost, Linear, etc.           | [App (Streamlit)](./laptop-price-prediction/streamlit_app/app.py)               |
+| **Stock Price Prediction**     | Classify next-day stock movement                          | Classification   | SVC, KNN, RF, XGBoost               | [Notebook](./stock-price-prediction/)                                           |
+| **Loan Status Prediction**     | Predict loan approvals using applicant data               | Classification   | SVM (linear kernel)                 | [Notebook](./loan-status-prediction/loan_status_model.ipynb)                    |
+
+---
+
 ## Completed Projects
 
 ### 🔹 [Sonar Object Classification](./sonar-object-classification/)
