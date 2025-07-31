@@ -29,6 +29,7 @@ plt.title("Class Distribution", fontsize=14, color='#F5D300')
 plt.xlabel("Label", fontsize=12)
 plt.ylabel("Count", fontsize=12)
 plt.grid(True, linestyle='--', alpha=0.3)
+plt.savefig("graphs/class_distribution.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -36,6 +37,7 @@ plt.figure(figsize=(14, 10))
 correlation = df.drop(columns='label').corr()
 sns.heatmap(correlation, cmap='viridis', center=0, square=True, linewidths=0.05, linecolor='black', cbar_kws={"shrink": 0.5})
 plt.title("Feature Correlation Heatmap", fontsize=14, color='#08F7FE')
+plt.savefig("graphs/feature_correlation_heatmap.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -47,6 +49,7 @@ plt.title("Top 10 Features by Variance", fontsize=14, color='#FE53BB')
 plt.xlabel("Variance", fontsize=12)
 plt.ylabel("Feature", fontsize=12)
 plt.grid(True, linestyle='--', alpha=0.2)
+plt.savefig("graphs/top10_feature_variance.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -65,6 +68,7 @@ sns.scatterplot(data=pca_df, x='PC1', y='PC2', hue='label', palette=neon_colors[
 plt.title("PCA Projection (2D)", fontsize=14, color='#00ff41')
 plt.legend(title='Label')
 plt.grid(True, linestyle=':', alpha=0.2)
+plt.savefig("graphs/pca_projection_2d.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -79,6 +83,7 @@ for i, feat in enumerate(key_features, 1):
     plt.grid(True, linestyle='--', alpha=0.3)
 plt.suptitle("Key Feature Distributions by Class", fontsize=15, color='#FE53BB')
 plt.tight_layout()
+plt.savefig("graphs/key_features_boxplot.png", dpi=300, bbox_inches='tight')
 plt.show()
 
 
